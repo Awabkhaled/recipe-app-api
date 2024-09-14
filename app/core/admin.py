@@ -1,8 +1,9 @@
 """admin related stuf"""
-from django.contrib import admin  # noqa
+from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from core import models
 from django.utils.translation import gettext_lazy as _
+
 
 class UserAdmin(BaseUserAdmin):
     """Define admin pages for users"""
@@ -53,5 +54,6 @@ class UserAdmin(BaseUserAdmin):
             ),
         }),
     )
+
 
 admin.site.register(models.User, UserAdmin)
